@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content
+		="width=device-width, initial-scale=1.0">
+	<title>Dice</title>
+
+	<style>
+		.container {
+			width: 70%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.dice {
+			text-align: center;
+			display: inline-block;
+			margin: 10px;
+		}
+		h1 {
+			margin: 30px;
+			font-size: 4.5rem;
+			text-align: center;
+		}
+			img {
+			width: 80%;
+		}
+
+		.bottom {
+			padding-top: 30px;
+		}
+
+		.butn {
+			font-family: "Indie Flower", cursive;
+			border-radius: 7px;
+			font-size: 30px;
+			padding: 16px 25px 16px 25px;
+			}
+
+		.butn:hover {
+			background: #91bcf5;
+			}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>ลูกเต๋า</h1>
+
+		<div class="dice">
+            <img class="img1" src="dice6.png">
+		</div>
+
+		<div class="dice">
+            <img class="img2" src="dice6.png">
+		</div>
+
+        <div class="dice">
+            <img class="img3" src="dice6.png">
+		</div>
+	</div>
+
+	<div class="container bottom">
+		<button type="button" class="butn"
+			onClick="rollTheDice()">
+			ทอย
+		</button>
+	</div>
+		<script>
+
+		function rollTheDice() {
+			setTimeout(function () {
+				var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+				var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+                var randomNumber3 = Math.floor(Math.random() * 6) + 1;
+
+				document.querySelector(".img1").setAttribute("src",
+					"dice" + randomNumber1 + ".png");
+
+				document.querySelector(".img2").setAttribute("src",
+					"dice" + randomNumber2 + ".png");
+
+                document.querySelector(".img3").setAttribute("src",
+					"dice" + randomNumber3 + ".png");	
+			}, 
+            );
+		}
+	</script>
+</body>
+
+</html>
